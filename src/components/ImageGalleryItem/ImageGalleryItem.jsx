@@ -22,7 +22,7 @@ export class ImageGalleryItem extends Component {
     const { webFormatURL, tags } = this.props;
 
     return (
-      <li className={css.imageGalleryItem}>
+      <li className={css.imageGalleryItem} onClick={this.handleOpenModal}>
         <img
           className={css.imageGalleryItemImage}
           src={webFormatURL}
