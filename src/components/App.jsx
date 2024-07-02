@@ -21,7 +21,7 @@ export class App extends Component {
     const { search, page } = this.state;
 
     if (prevState.search !== search || prevState.page !== page) {
-      await this.fetchImage(search, page);
+      await this.fetchImages(search, page);
     }
   };
 
@@ -30,7 +30,6 @@ export class App extends Component {
       this.setState({ isLoading: true });
 
       const fetchedImages = await getAPI(search, page);
-
       const { hits, totalHits } = fetchedImages;
 
       console.log(hits, totalHits);
