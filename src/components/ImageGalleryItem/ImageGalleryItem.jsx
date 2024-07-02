@@ -1,9 +1,39 @@
+import { Component } from 'react';
 import css from './ImageGalleryItem.module.css';
+import ImageModal from 'components/Modal/Modal';
 
-export const ImageGalleryItem = () => {
-  return (
-    <li className={css.galleryItem}>
-      <img src="" alt="" />
-    </li>
-  );
-};
+export class ImageGalleryItem extends Component {
+  state = {
+    selectedImage: null,
+  };
+
+  handleOpenModal = () => {
+    this.setState({
+      selectedImage: this.props.largeImageURL,
+    });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ selectedImage: null });
+  };
+
+  render() {
+    const { selectedImage } = this.state;
+    const { webFormatURL, tags } = this.props;
+
+    return (
+      <li className={css.imageGalleryItem}>
+        <img
+          className={css.imageGalleryItemImage}
+          src={webFormatURL}
+          alt={tags}
+        />
+        <ImageModal
+          modalClose={this.handleCloseModal}
+          modalOpen={selectedImage !== null}
+          image={selectedImage}
+        />
+      </li>
+    );
+  }
+}
