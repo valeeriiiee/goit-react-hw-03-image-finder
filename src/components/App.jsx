@@ -1,5 +1,4 @@
 import { getAPI } from '../pixabay-ai';
-
 import { Component } from 'react';
 import { SearchBar } from './SearchBar/SearchBar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
