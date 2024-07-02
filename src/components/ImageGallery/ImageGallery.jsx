@@ -4,10 +4,10 @@ import css from './ImageGallery.module.css';
 export const ImageGallery = ({ photos }) => {
   return (
     <ul className={css.imageGallery}>
-      {photos.map(({ id, webFormatURL, largeImageURL, tags }) => (
+      {photos.map(({ id, webformatURL, largeImageURL, tags }) => (
         <ImageGalleryItem
           key={id}
-          webFormatURL={webFormatURL}
+          webformatURL={webformatURL}
           largeImageURL={largeImageURL}
           tags={tags}
         />
