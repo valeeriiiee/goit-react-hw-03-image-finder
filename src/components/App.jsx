@@ -48,7 +48,7 @@ export class App extends Component {
 
       if (page * 12 >= totalHits) {
         this.setState({ isEnd: true });
-        toast('Sorry but you have reached the end of the seacrh results.');
+        toast('Sorry but you have reached the end of the search results.');
       }
 
       this.setState(prevState => ({
