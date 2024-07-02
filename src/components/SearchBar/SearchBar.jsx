@@ -16,6 +16,7 @@ export const SearchBar = ({ onSubmit }) => {
           autoComplete="off"
           autoFocus
           placeholder="Search images and photos"
+          name="search"
         />
       </form>
     </header>
